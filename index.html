@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Гид по БАДам — безопасный выбор, рекомендации и калькуляторы</title>
+    <meta name="description" content="Подробный и практичный гид по БАДам: как выбрать, для каких целей применять, на что обращать внимание. Поиск, рекомендации, совместимость, калькуляторы. Не является медицинской рекомендацией.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="logo" aria-hidden="true">🧭</span>
+          <span class="brand-title">Гид по БАДам</span>
+        </div>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#about">О БАДах</a>
+          <a href="#chooser">Подбор</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#tools">Калькуляторы</a>
+          <a href="#compat">Совместимость</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero container" id="home">
+        <div class="hero-content">
+          <h1>Осознанный подход к БАДам</h1>
+          <p>Подберите добавки под свои цели, узнайте о безопасности, формах, дозировках и сочетаемости. Информация носит образовательный характер и не заменяет консультацию врача.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#chooser">Подобрать под цель</a>
+            <a class="btn" href="#catalog">Открыть каталог</a>
+          </div>
+        </div>
+        <a class="hero-banner" href="https://example.com" target="_blank" rel="noopener" aria-label="Перейти по баннеру">
+          <img src="images/alfaBanner(horizontal).jpg" alt="Баннер" loading="lazy">
+        </a>
+      </section>
+
+      <section class="container info-grid" id="about">
+        <div class="card">
+          <h2>Что такое БАД</h2>
+          <p>Биологически активные добавки — это продукты, содержащие нутриенты, экстракты растений, пробиотики и иные вещества. Они дополняют рацион, но не заменяют питание или лечение. Перед началом приема рекомендуется обсудить планы с врачом, особенно при хронических заболеваниях, приеме лекарств, беременности или кормлении грудью.</p>
+        </div>
+        <div class="card">
+          <h2>Как выбирать</h2>
+          <ul class="checklist">
+            <li>Состав: эффективная форма действующего вещества без лишних добавок</li>
+            <li>Дозировка: соответствие вашим задачам и безопасным диапазонам</li>
+            <li>Качество: сертификаты GMP, результаты независимых анализов (COA)</li>
+            <li>Производитель: репутация, прозрачность, понятная этикетка</li>
+            <li>Условия применения: совместимость с лекарствами и другими БАДами</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Правила безопасного старта</h2>
+          <ul class="checklist">
+            <li>Начинайте с низких доз и оценивайте переносимость</li>
+            <li>Вводите по одному продукту, чтобы понимать эффект</li>
+            <li>Фиксируйте самочувствие и возможные побочные реакции</li>
+            <li>Делайте перерывы при необходимости; не превышайте дозы</li>
+            <li>При наличии заболеваний согласуйте прием с врачом</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="container chooser" id="chooser">
+        <h2>Подбор по цели</h2>
+        <p>Выберите ваши приоритеты — мы предложим категории БАДов и примеры добавок.</p>
+        <div class="goal-chips" role="group" aria-label="Цели">
+          <button class="chip" data-goal="иммунитет">Иммунитет</button>
+          <button class="chip" data-goal="энергия">Энергия и работоспособность</button>
+          <button class="chip" data-goal="сон-стресс">Сон и стресс</button>
+          <button class="chip" data-goal="суставы">Суставы</button>
+          <button class="chip" data-goal="спорт">Спорт и мышцы</button>
+          <button class="chip" data-goal="кожа-волосы">Кожа, волосы, ногти</button>
+          <button class="chip" data-goal="пищеварение">Пищеварение</button>
+          <button class="chip" data-goal="сердце">Сердце и сосуды</button>
+        </div>
+        <div class="chooser-results" id="chooserResults" aria-live="polite"></div>
+      </section>
+
+      <section class="container catalog" id="catalog">
+        <div class="catalog-header">
+          <h2>Каталог популярных добавок</h2>
+          <div class="search-bar">
+            <input id="searchInput" type="search" placeholder="Поиск по названию или пользе (например: сон, иммунитет, энергия)" aria-label="Поиск">
+          </div>
+        </div>
+        <div id="supplementList" class="grid"></div>
+      </section>
+
+      <section class="container tools" id="tools">
+        <h2>Инструменты и калькуляторы</h2>
+        <div class="tools-grid">
+          <div class="tool card">
+            <h3>Пересчёт элементарного магния</h3>
+            <p>Введите количество соли магния на этикетке — мы оценим эквивалент элементарного магния на типичных значениях для разных форм. Это ориентир, а не замена информации производителя.</p>
+            <label class="inline">
+              <span>Форма:</span>
+              <select id="mgSalt">
+                <option value="oxide">Оксид (~60% Mg)</option>
+                <option value="citrate">Цитрат (~16% Mg)</option>
+                <option value="glycinate">Глицинат (~14% Mg)</option>
+                <option value="malate">Малат (~15% Mg)</option>
+                <option value="taurate">Таурата (~8% Mg)</option>
+              </select>
+            </label>
+            <label class="inline">
+              <span>Масса соли, мг:</span>
+              <input id="mgSaltAmount" type="number" min="0" step="1" placeholder="например, 1000">
+            </label>
+            <button class="btn" id="calcMg">Рассчитать</button>
+            <div class="result" id="mgResult" aria-live="polite"></div>
+          </div>
+
+          <div class="tool card">
+            <h3>Планировщик приема (локально)</h3>
+            <p>Соберите свой базовый план: какие добавки и в какое время суток. Данные хранятся только в вашем браузере.</p>
+            <div class="planner">
+              <label>
+                <span>Добавка</span>
+                <input id="planName" type="text" placeholder="например, Омега‑3 1000 мг">
+              </label>
+              <label>
+                <span>Время суток</span>
+                <select id="planTime">
+                  <option>Утро</option>
+                  <option>День</option>
+                  <option>Вечер</option>
+                </select>
+              </label>
+              <button class="btn" id="addPlan">Добавить</button>
+              <div class="plan-list" id="planList"></div>
+            </div>
+          </div>
+
+          <div class="tool card">
+            <h3>Мини‑проверка качества БАД</h3>
+            <p>Быстрый чек‑лист перед покупкой:</p>
+            <ul class="checklist compact">
+              <li>Есть ли у бренда GMP/ISO и раскрывается ли COA</li>
+              <li>Понятная форма и дозировка действующего вещества</li>
+              <li>Минимум ненужных ингредиентов (красители, сахар)</li>
+              <li>Адекватная цена за активное вещество</li>
+              <li>Нет противоречий вашему лечению/состоянию</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="container compat" id="compat">
+        <h2>Совместимость и предостережения</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Чего избегать вместе</h3>
+            <ul class="bullets">
+              <li><strong>Магний ↔️ Железо</strong>: могут мешать усвоению друг друга при одновременном приеме — разделяйте по времени.</li>
+              <li><strong>Кальций ↔️ Железо</strong>: конкурируют — лучше разнести по времени.</li>
+              <li><strong>Омега‑3 + антикоагулянты</strong>: возможен риск кровотечений — обязательна консультация с врачом.</li>
+              <li><strong>Зверобой</strong>: выраженные взаимодействия с лекарствами (индуктор CYP) — не используйте без согласования.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Полезные сочетания</h3>
+            <ul class="bullets">
+              <li><strong>Витамин D + K2</strong>: часто комбинируют для поддержки метаболизма кальция.</li>
+              <li><strong>Витамин C + Железо</strong>: витамин C может улучшать усвоение железа.</li>
+              <li><strong>Пробиотики + Пребиотики</strong>: синергия для микробиоты.</li>
+              <li><strong>Креатин + Углеводы</strong>: углеводы могут улучшать транспорт креатина в мышцу.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Группы риска</h3>
+            <p>Беременность, кормление грудью, дети, хронические заболевания, прием рецептурных препаратов — обсуждайте БАДы с врачом. При появлении нежелательных реакций прекратите прием и обратитесь за медицинской помощью.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container faq" id="faq">
+        <h2>Частые вопросы</h2>
+        <details>
+          <summary>БАД — это лекарство?</summary>
+          <p>Нет. БАДы не предназначены для диагностики, лечения или профилактики заболеваний. Это пищевые добавки. При проблемах со здоровьем обращайтесь к врачу.</p>
+        </details>
+        <details>
+          <summary>Нужны ли перерывы?</summary>
+          <p>Для ряда добавок практикуют цикличность. Решение о длительности приема и перерывах желательно согласовывать с врачом с учетом переносимости и целей.</p>
+        </details>
+        <details>
+          <summary>Можно ли сочетать несколько БАДов?</summary>
+          <p>Иногда да, но учитывайте суммарные дозировки, взаимодействия и индивидуальную переносимость. Вводите по одному продукту.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Информация на сайте предоставлена в образовательных целях и не является медицинской рекомендацией. Перед началом приема любых добавок обсудите это с врачом.</p>
+      </div>
+    </footer>
+  </body>
+  </html>
+
